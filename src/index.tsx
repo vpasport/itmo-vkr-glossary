@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
 import { MainRouter } from './routers'
 
+import './main.scss'
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>

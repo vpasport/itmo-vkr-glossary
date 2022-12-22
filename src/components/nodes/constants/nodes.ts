@@ -31,4 +31,10 @@ export const initialNodes: Node[] = [
     data: { label: 'Output 8' },
     position: { x: 525, y: 600 },
   },
+  {
+    id: 'edges-9',
+    type: 'custom',
+    data: { label: 'Output 9' },
+    position: { x: 625, y: 700 },
+  },
 ]

@@ -13,9 +13,14 @@ import ReactFlow, {
 } from 'reactflow'
 
 import { initialEdges, initialNodes } from './constants'
+import { Node as CustomNode } from './node'
 
 import 'reactflow/dist/style.css'
 import styles from './style.module.scss'
+
+const nodeTypes = {
+  custom: CustomNode,
+}
 
 export const Nodes: FC = () => {
   const [nodes, , onNodesChange] = useNodesState(initialNodes)
@@ -35,6 +40,7 @@ export const Nodes: FC = () => {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         snapToGrid
+        nodeTypes={nodeTypes}
         //   edgeTypes={edgeTypes}
         fitView
         attributionPosition="top-right"

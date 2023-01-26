@@ -1,18 +1,19 @@
 import type { FC } from 'react'
 
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import { Router, Switch, Route } from 'react-router-dom'
 
+import { Header } from '@/components'
 import { Dictionary, Graph } from '@/pages'
 
-const router = createBrowserRouter([
-  { path: '/graph', element: <Graph /> },
-  {
-    path: '*',
-    element: <Dictionary />,
-  },
-])
-
 export const MainRouter: FC = () => {
-  return <RouterProvider router={router} />
+  return (
+    <Router history={createBrowserHistory({ forceRefresh: true })}>
+      <Header />
+      <Switch>
+        <Route path="/graph" component={Graph} />
+        <Route path="*" component={Dictionary} />
+      </Switch>
+    </Router>
+  )
 }

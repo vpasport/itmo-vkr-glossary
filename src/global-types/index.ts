@@ -1,1 +1,1 @@
-export type { CustomNodeData } from './node.types'
+export type { CustomNodeData, IData } from './node.types'

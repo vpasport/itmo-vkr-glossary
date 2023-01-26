@@ -1,7 +1,7 @@
-import type { FC } from 'react'
+import type { FC, MouseEventHandler } from 'react'
 import type { CustomNodeProps } from './node.type'
 
-import { useContext, memo } from 'react'
+import { useContext, memo, useCallback } from 'react'
 import { Handle, Position } from 'reactflow'
 
 import { GlobalContext } from '@/contexts'
@@ -12,6 +12,14 @@ import classnames from 'classnames'
 export const Node: FC<CustomNodeProps> = memo(function Node({
   data: { topSource = true, ...data },
 }) {
+  const { setSelectedTerm } = useContext(GlobalContext)
+
+  const onClick = useCallback<MouseEventHandler<HTMLDivElement>>((e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setSelectedTerm(data)
+  }, [])
+
   return (
     <>
       {topSource && (
@@ -21,7 +29,7 @@ export const Node: FC<CustomNodeProps> = memo(function Node({
           className={classnames(styles.dot, styles.dot_top)}
         />
       )}
-      <div className={styles.container}>
+      <div className={styles.container} onClick={onClick}>
         <p className={styles['container-term']}>{data.term}</p>
         <p className={styles['container-meaning']}>{data.meaning}</p>
       </div>

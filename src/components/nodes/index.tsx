@@ -1,18 +1,17 @@
-import type { FC } from 'react'
-import type { Edge, Node, Connection } from 'reactflow'
+import type { FC, MouseEventHandler } from 'react'
+import type { Connection } from 'reactflow'
+import type { NodesProps } from './nodes.types'
 
-import { useCallback } from 'react'
+import { useCallback, useContext } from 'react'
 import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  MiniMap,
   Controls,
-  Background,
-  MarkerType,
 } from 'reactflow'
 
-import { initialEdges, initialNodes } from '@/constants'
+import { GlobalContext } from '@/contexts'
+
 import { Node as CustomNode } from './node'
 
 import 'reactflow/dist/style.css'
@@ -22,14 +21,21 @@ const nodeTypes = {
   custom: CustomNode,
 }
 
-export const Nodes: FC = () => {
-  const [nodes, , onNodesChange] = useNodesState(initialNodes)
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
+export const Nodes: FC<NodesProps> = ({ data }) => {
+  const { setSelectedTerm } = useContext(GlobalContext)
+
+  const [nodes, , onNodesChange] = useNodesState(data.nodes)
+  const [edges, setEdges, onEdgesChange] = useEdgesState(data.edges)
 
   const onConnect = useCallback(
     (params: Connection) => setEdges((eds) => addEdge(params, eds)),
     [],
   )
+
+  const onClick = useCallback<MouseEventHandler<HTMLDivElement>>((e) => {
+    e.preventDefault()
+    setSelectedTerm(null)
+  }, [])
 
   return (
     <div className={styles.nodes}>
@@ -41,10 +47,10 @@ export const Nodes: FC = () => {
         onConnect={onConnect}
         snapToGrid
         nodeTypes={nodeTypes}
-        //   edgeTypes={edgeTypes}
         fitView
         attributionPosition="top-right"
         maxZoom={1}
+        onClick={onClick}
       >
         <Controls />
       </ReactFlow>

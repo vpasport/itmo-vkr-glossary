@@ -1,2 +1,1 @@
-export { initialEdges } from './edges'
-export { initialNodes } from './nodes'
+export { BASE_URL } from './urls'

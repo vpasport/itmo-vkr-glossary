@@ -1,0 +1,22 @@
+.dictionary {
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  width: 100%;
+  height: 100vh;
+  padding: 100px 20px 60px;
+
+  background-color: #f4f4f4;
+
+  @media (max-width: 860px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    gap: 20px;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

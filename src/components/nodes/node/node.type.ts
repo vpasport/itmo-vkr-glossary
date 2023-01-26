@@ -1,11 +1,6 @@
-import type { NodeProps, Position } from 'reactflow'
-
-interface CustopNodeData {
-  label: string
-  targetPosition?: Position
-  sourcePosition?: Position
-}
+import type { NodeProps } from 'reactflow'
+import type { CustomNodeData } from '@/global-types'
 
 export interface CustomNodeProps extends NodeProps {
-  data: CustopNodeData
+  data: CustomNodeData
 }

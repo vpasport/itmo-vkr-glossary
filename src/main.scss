@@ -1,27 +1,41 @@
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap';
-@import "./variables";
+@import './variables';
 
 * {
+  scrollbar-color: #cbd9e0 transparent;
   scrollbar-width: thin;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  color: #23262d;
 
   &::-webkit-scrollbar {
     width: 8px;
     background: transparent;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   &::-webkit-scrollbar-thumb {
+    background: #cbd9e0;
     border-radius: 4px;
+
+    &:hover {
+      background: #a0b5c0;
+    }
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: #eceff1;
+  }
+
+  &::-webkit-resizer {
+    background: #eceff1;
   }
 }
 
-
 html {
-    background-color: $main-background;
+  background-color: $main-background;
 }
 
 html,

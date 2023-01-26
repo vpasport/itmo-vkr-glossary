@@ -5,6 +5,12 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@components": ["./src/components"],
+      "@constants/*": ["./src/constants/*"],
+      "@constants": ["./src/constants"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@contexts": ["./src/contexts"],
+      "@global-types/*": ["./src/global-types/*"],
+      "@global-types": ["./src/global-types"],
       "@pages/*": ["./src/pages/*"],
       "@pages": ["./src/pages"],
       "@routers": ["./src/routers"]

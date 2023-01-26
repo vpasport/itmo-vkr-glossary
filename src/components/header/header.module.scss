@@ -1,0 +1,37 @@
+.header {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 12px 16px;
+
+  &-button {
+    display: flex;
+    align-items: center;
+
+    width: fit-co ntent;
+    padding: 12px 20px;
+
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 20px;
+    color: #fafafa;
+    letter-spacing: -0.2px;
+
+    background: #13a0fe;
+    border-radius: 12px;
+    box-shadow: 0 0 1px rgb(44 44 54 / 4%),
+      0 0 2px rgb(44 44 54 / 6%), 0 4px 8px rgb(44 44 54 / 4%);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import type { Edge, Node, Connection } from 'reactflow'
 
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -12,7 +12,7 @@ import ReactFlow, {
   MarkerType,
 } from 'reactflow'
 
-import { initialEdges, initialNodes } from './constants'
+import { initialEdges, initialNodes } from '@/constants'
 import { Node as CustomNode } from './node'
 
 import 'reactflow/dist/style.css'
@@ -44,6 +44,7 @@ export const Nodes: FC = () => {
         //   edgeTypes={edgeTypes}
         fitView
         attributionPosition="top-right"
+        maxZoom={1}
       >
         <Controls />
       </ReactFlow>

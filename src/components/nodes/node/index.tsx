@@ -1,31 +1,35 @@
 import type { FC } from 'react'
 import type { CustomNodeProps } from './node.type'
 
-import React from 'react'
+import { useContext, memo } from 'react'
 import { Handle, Position } from 'reactflow'
 
-import styles from './style.module.scss'
+import { GlobalContext } from '@/contexts'
 
-export const Node: FC<CustomNodeProps> = React.memo(function Node({
-  data,
-  isConnectable,
+import styles from './style.module.scss'
+import classnames from 'classnames'
+
+export const Node: FC<CustomNodeProps> = memo(function Node({
+  data: { topSource = true, ...data },
 }) {
   return (
     <>
-      <Handle
-        type="target"
-        position={data.targetPosition ?? Position.Top}
-        style={{ background: '#555' }}
-        onConnect={(params) => console.log('handle onConnect', params)}
-        isConnectable={isConnectable}
-      />
-      <div className={styles.container}>{data.label}</div>
-      {data.sourcePosition && (
+      {topSource && (
+        <Handle
+          type="target"
+          position={Position.Top}
+          className={classnames(styles.dot, styles.dot_top)}
+        />
+      )}
+      <div className={styles.container}>
+        <p className={styles['container-term']}>{data.term}</p>
+        <p className={styles['container-meaning']}>{data.meaning}</p>
+      </div>
+      {data.bottomSource && (
         <Handle
           type="source"
-          position={data.sourcePosition}
-          style={{ bottom: 10, top: 'auto', background: '#555' }}
-          isConnectable={isConnectable}
+          position={Position.Bottom}
+          className={classnames(styles.dot, styles.dot_bottom)}
         />
       )}
     </>

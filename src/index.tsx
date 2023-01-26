@@ -1,5 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Helmet } from 'react-helmet'
+
+import { GlobalContextProvider } from '@/contexts'
 
 import reportWebVitals from './reportWebVitals'
 import { MainRouter } from './routers'
@@ -9,7 +12,14 @@ import './main.scss'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <MainRouter />
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Глоссарий</title>
+      <link rel="icon" href="/logo.png" />
+    </Helmet>
+    <GlobalContextProvider>
+      <MainRouter />
+    </GlobalContextProvider>
   </React.StrictMode>,
 )
 

@@ -1,0 +1,35 @@
+.user {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+
+  padding: 12px 60px 12px 20px;
+
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 1px rgb(44 44 54 / 4%),
+    0 0 2px rgb(44 44 54 / 6%), 0 4px 8px rgb(44 44 54 / 4%);
+
+  & span {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 20px;
+  }
+
+  & img {
+    position: absolute;
+    right: 24px;
+
+    width: 36px;
+    height: 36px;
+
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

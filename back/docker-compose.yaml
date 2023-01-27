@@ -1,0 +1,44 @@
+version: "3.9"
+networks:
+  network:
+    driver: bridge
+
+services:
+  terms-back:
+    build: .
+    depends_on:
+      redis:
+        condition: service_healthy
+    container_name: terms-back
+    environment:
+      #REDIS
+      - REDIS_PORT=6379
+      - REDIS_TIMEOUT=200ms
+    ports:
+      - "8080:8080"
+    networks:
+      - network
+    user: root
+    restart: on-failure
+
+  redis:
+    container_name: storage
+    image: redis:4-alpine
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - ./redis-data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_REPLICATION_MODE=master
+    networks:
+      - network
+    restart: on-failure

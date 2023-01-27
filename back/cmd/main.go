@@ -61,7 +61,7 @@ func main() {
 		Config:  config,
 	}
 
-	http.HandleFunc("/mind-map", handler.GetTerms)
+	http.HandleFunc("/api/mind-map", handler.GetTerms)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

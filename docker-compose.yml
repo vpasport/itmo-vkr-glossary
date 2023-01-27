@@ -1,0 +1,60 @@
+version: "3.9"
+
+networks:
+  network:
+    driver: bridge
+
+services:
+  back:
+    build: ./back
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      #REDIS
+      - REDIS_PORT=6379
+      - REDIS_TIMEOUT=200ms
+    ports:
+      - "8080:8080"
+    networks:
+      - network
+    user: root
+    restart: on-failure
+
+  front:
+    build: 
+      context: ./front
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_BACKEND=http://localhost:8080
+    ports:
+      - "3000:3000"
+    user: root
+    restart: on-failure
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - back
+
+  redis:
+    container_name: storage
+    image: redis:4-alpine
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - ./redis-data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_REPLICATION_MODE=master
+    networks:
+      - network
+    restart: on-failure

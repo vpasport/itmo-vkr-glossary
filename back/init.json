@@ -1,23 +1,516 @@
 {
+  "nodes": [
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-1",
+      "type": "custom",
+      "data": {
+        "term": "Мобильное приложение",
+        "meaning": "это программный пакет, функционал и дизайн которого «заточен» под возможности мобильных платформ",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 15,
+        "y": 0
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 15,
+        "y": 0
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 156,
+      "id": "term-2",
+      "type": "custom",
+      "data": {
+        "term": "Кроссплатформенные приложения",
+        "meaning": "приложения, которые разрабатываются и затем работают сразу и на Android, и на iOS. Суть разработки в том, что исходный код приложения переводится в нативный, то есть понятный конкретному мобильному устройству. В результате программа может взаимодействовать с установленной на нём операционной системой",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 525,
+        "y": 285
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 525,
+        "y": 285
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 156,
+      "id": "term-3",
+      "type": "custom",
+      "data": {
+        "term": "PWA или Progressive Web Application",
+        "meaning": "технология, которая позволяет клиентам установить ваш сайт на смартфон как приложение. На русский язык переводиться как «прогрессивное веб-приложение»",
+        "bottomSource": true
+      },
+      "position": {
+        "x": -480,
+        "y": 285
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": -480,
+        "y": 285
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-4",
+      "type": "custom",
+      "data": {
+        "term": "нативное приложение",
+        "meaning": "это приложение, которое создается под конкретную платформу. Нативное мобильное приложение написано на «родном» для платформы языке программирования: для Android — Kotlin и Java, для Apple iOS — Objective-C и Swift",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 15,
+        "y": 285
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 15,
+        "y": 285
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-5",
+      "type": "custom",
+      "data": {
+        "term": "фреймворк",
+        "meaning": "это программная среда, которая упрощает и ускоряет создание программного обеспечения. При использовании фреймворков вы пишете только тот код, который реализует логику, специфическую для вашего продукта. Вам не приходится самостоятельно обеспечивать работу с базой данных, аутентификацию, поддержку сеансов и т. п. Все это реализовано во фреймворках",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 525,
+        "y": 510
+      },
+      "selected": true,
+      "positionAbsolute": {
+        "x": 525,
+        "y": 510
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-6",
+      "type": "custom",
+      "data": {
+        "term": "Xamarin",
+        "meaning": "это платформа с открытым исходным кодом, предназначенная для построения современных производительных приложений для iOS, Android и Windows с .NET. Платформа Xamarin представляет собой уровень абстракции, который обеспечивает управление взаимодействием между общим кодом и кодом базовой платформы. Xamarin выполняется в управляемой среде, которая реализует такие возможности, как выделение памяти и сборка мусора"
+      },
+      "position": {
+        "x": -135,
+        "y": 930
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": -135,
+        "y": 930
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-7",
+      "type": "custom",
+      "data": {
+        "term": "React Native",
+        "meaning": "это фреймворк для создания кроссплатформенных приложений на языке JavaScript. Он позволяет писать приложения для IOS, Android и даже VR (на React VR можно создавать приложения для шлемов и очков виртуальной реальности»)",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 795,
+        "y": 930
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 795,
+        "y": 930
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-8",
+      "type": "custom",
+      "data": {
+        "term": "Kotlin Multiplatform Mobile ",
+        "meaning": "набор инструментов, позволяющий написать код и скомпилировать его в нативную библиотеку Android, нативный фреймворк iOS и других платформ. То есть получить такие библиотеки, к которым привыкли разработчики на каждой из платформ"
+      },
+      "position": {
+        "x": 1260,
+        "y": 930
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1260,
+        "y": 930
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-9",
+      "type": "custom",
+      "data": {
+        "term": "Flutter",
+        "meaning": "это фреймворк с открытым исходным кодом и набор инструментов для создания кросс-платформенных приложений. С его помощью можно написать приложения под Android, iOS, Windows, macOS, Linux и даже веб-приложения",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 330,
+        "y": 930
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 330,
+        "y": 930
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-10",
+      "type": "custom",
+      "data": {
+        "term": "Bridge",
+        "meaning": "Мост RN, написанный на Java/C++, обеспечивает взаимодействие между основным потоком приложения и потоком JavaScript, используя для этого пользовательский протокол передачи сообщений. Поток JavaScript решает, что должно быть отображено на экране"
+      },
+      "position": {
+        "x": 795,
+        "y": 1200
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 795,
+        "y": 1200
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-11",
+      "type": "custom",
+      "data": {
+        "term": "WebView",
+        "meaning": "это системный компонент, или, проще говоря, приложение, которое отвечает за открытие веб-страниц в рамках других приложений"
+      },
+      "position": {
+        "x": -690,
+        "y": 570
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": -690,
+        "y": 570
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-12",
+      "type": "custom",
+      "data": {
+        "term": "Flutter Engine",
+        "meaning": "платформонезависимая часть Flutter, написанная на C/C++, фактически представляет из себя динамическую библиотеку, подключаемую при старте приложения. Поставляется в скомпилированном виде на машине разработчика при установке Flutter. Содержит виртуальную машину Dart, библиотеку Skia, код рендеринга, код взаимодействия с нижнем уровнем платформы"
+      },
+      "position": {
+        "x": 330,
+        "y": 1185
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 330,
+        "y": 1185
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-13",
+      "type": "custom",
+      "data": {
+        "term": "Android",
+        "meaning": "популярная операционная система, построенная на ядре Linux. Используется в смартфонах, планшетах, электронных книгах, цифровых проигрывателях, наручных часах, фитнес-браслетах, игровых приставках, ноутбуках, нетбуках, телевизорах и других устройствах",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 795,
+        "y": -210
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 795,
+        "y": -210
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-14",
+      "type": "custom",
+      "data": {
+        "term": "iOS",
+        "meaning": "операционная система, разработанная компанией Apple для своих портативных устройств. Впервые она появилась на смартфонах iPhone и плеерах iPod в 2007 году, а с 2010 года стала устанавливаться на планшетах iPad. В 2014 году появилась поддержка автомобильных устройств Apple CarPlay. В отличие от других мобильных операционных систем (например Android), может устанавливаться только на фирменных продуктах Apple",
+        "bottomSource": true
+      },
+      "position": {
+        "x": 270,
+        "y": -210
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 270,
+        "y": -210
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-15",
+      "type": "custom",
+      "data": {
+        "term": "HarmonyOS",
+        "meaning": "это универсальная операционная система Huawei, которая обеспечивает работу широкого круга устройств от «умного дома» до смарт-часов, смартфонов, планшетов, ПК и даже автомобилей. Она совместима с софтом для Android, Linux, Unix и прогрессивными веб-приложениями. По сути, в Huawei взяли за основу открытый код Android, но без встроенных сервисов Google",
+        "bottomSource": true
+      },
+      "position": {
+        "x": -705,
+        "y": -210
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": -705,
+        "y": -210
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-16",
+      "type": "custom",
+      "data": {
+        "term": "Fuchsia",
+        "meaning": "это операционная система общего назначения с открытым исходным кодом, разрабатываемая компанией Google. Эта операционная система построена на базе микроядра Zircon, код которого написан на C++. При проектировании Fuchsia приоритет был отдан безопасности, обновляемости и быстродействию",
+        "bottomSource": true
+      },
+      "position": {
+        "x": -240,
+        "y": -210
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": -240,
+        "y": -210
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 156,
+      "id": "term-17",
+      "type": "custom",
+      "data": {
+        "term": "Мобильная операционная система ",
+        "meaning": "это ОС, созданная исключительно для мобильного устройства, такого как смартфон, персональный цифровой помощник (PDA), планшет или другая встроенная мобильная ОС",
+        "topSource": false,
+        "bottomSource": true
+      },
+      "position": {
+        "x": 15,
+        "y": -510
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 15,
+        "y": -510
+      },
+      "dragging": false
+    },
+    {
+      "width": 400,
+      "height": 131,
+      "id": "term-18",
+      "type": "custom",
+      "data": {
+        "term": "Язык программирования ",
+        "meaning": "это формальная знаковая система, на которой пишут компьютерные программы. Его можно представить как набор разнообразных правил и команд, на основе которых программист пишет код. Иногда словосочетание сокращают как ЯП"
+      },
+      "position": {
+        "x": -195,
+        "y": 690
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": -195,
+        "y": 690
+      },
+      "dragging": false
+    }
+  ],
   "edges": [
+    {
+      "id": "edge-1",
+      "source": "term-17",
+      "target": "term-13",
+      "className": "normal-edge"
+    },
     {
       "id": "edge-2",
       "source": "term-1",
       "target": "term-3",
       "className": "normal-edge"
+    },
+    {
+      "id": "edge-3",
+      "source": "term-1",
+      "target": "term-2",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-4",
+      "source": "term-1",
+      "target": "term-4",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-5",
+      "source": "term-2",
+      "target": "term-5",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-6",
+      "source": "term-2",
+      "target": "term-5",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-7",
+      "source": "term-9",
+      "target": "term-12",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-8",
+      "source": "term-7",
+      "target": "term-10",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-9",
+      "source": "term-5",
+      "target": "term-6",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-10",
+      "source": "term-5",
+      "target": "term-7",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-11",
+      "source": "term-5",
+      "target": "term-8",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-12",
+      "source": "term-5",
+      "target": "term-9",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-13",
+      "source": "term-3",
+      "target": "term-11",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-14",
+      "source": "term-4",
+      "target": "term-18",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-15",
+      "source": "term-5",
+      "target": "term-18",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-16",
+      "source": "term-17",
+      "target": "term-14",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-17",
+      "source": "term-17",
+      "target": "term-15",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-18",
+      "source": "term-17",
+      "target": "term-16",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-19",
+      "source": "term-13",
+      "target": "term-1",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-20",
+      "source": "term-14",
+      "target": "term-1",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-21",
+      "source": "term-15",
+      "target": "term-1",
+      "className": "normal-edge"
+    },
+    {
+      "id": "edge-22",
+      "source": "term-16",
+      "target": "term-1",
+      "className": "normal-edge"
     }
   ],
-  "nodes": [
-    {
-      "id": "term-1",
-      "type": "custom",
-      "data": {
-        "term": "term 1",
-        "meaning": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "bottomSource": true,
-        "topSource": false
-      },
-      "position": { "x": 0, "y": 0 }
-    }
-  ]
+  "viewport": {
+    "x": 551.8051454249173,
+    "y": 257.4565700459237,
+    "zoom": 0.4276332032986025
+  }
 }

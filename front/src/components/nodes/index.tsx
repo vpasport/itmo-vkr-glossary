@@ -59,11 +59,12 @@ export const Nodes: FC<NodesProps> = ({ data }) => {
         fitView
         attributionPosition="top-right"
         maxZoom={1}
+        minZoom={0.36}
         onClick={onClick}
         onInit={setInstance}
       >
-        <Controls />
-        <button
+        <Controls showInteractive={false} />
+        {/* <button
           style={{
             position: 'fixed',
             bottom: 40,
@@ -73,7 +74,7 @@ export const Nodes: FC<NodesProps> = ({ data }) => {
           onClick={onSave}
         >
           save
-        </button>
+        </button> */}
       </ReactFlow>
     </div>
   )

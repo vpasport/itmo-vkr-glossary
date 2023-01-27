@@ -1,15 +1,15 @@
 version: "3.9"
-
 networks:
   network:
     driver: bridge
 
 services:
-  back:
-    build: ./back
+  terms-back:
+    build: .
     depends_on:
       redis:
         condition: service_healthy
+    container_name: terms-back
     environment:
       #REDIS
       - REDIS_PORT=6379
@@ -20,22 +20,6 @@ services:
       - network
     user: root
     restart: on-failure
-
-  front:
-    build: 
-      context: ./front
-      dockerfile: Dockerfile
-      args:
-        - REACT_APP_BACKEND=http://localhost:8080
-    ports:
-      - "3000:3000"
-    user: root
-    restart: on-failure
-    deploy:
-      restart_policy:
-        condition: on-failure
-    depends_on:
-      - back
 
   redis:
     container_name: storage

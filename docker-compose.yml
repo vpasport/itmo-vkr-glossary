@@ -81,9 +81,15 @@ services:
     volumes:
       - ./nginx/app.conf:/etc/nginx/conf.d/default.conf
       - static-content:/term-front
+      - ./certbot:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
 
-  # certbot:
-  #   image: certbot/certbot
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
 
 volumes:
   static-content:
+  certbot:

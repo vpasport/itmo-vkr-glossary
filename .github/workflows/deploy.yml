@@ -23,8 +23,6 @@ jobs:
       with:
         context: ./front
         dockerfile: Dockerfile
-        args:
-          - REACT_APP_BACKEND=/vpasport
         push: false
   backend-build:
     runs-on: ubuntu-latest

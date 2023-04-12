@@ -14,8 +14,14 @@ jobs:
       name: Checkout
       uses: actions/checkout@v3
     - 
-      name: Install Yarn
-      run: npm install -g yarn
+      name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.x'
+    - 
+      name: Init git
+      working-directory: ./front
+      run: git init
     - 
       name: Install modules
       working-directory: ./front

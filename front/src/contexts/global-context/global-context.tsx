@@ -1,5 +1,4 @@
 import type { FC } from 'react'
-import type { CustomNodeData } from '@/global-types'
 import type { GlobalContextProps, IGlobalContext } from './global-context.types'
 
 import { createContext, useState, useEffect } from 'react'
@@ -12,9 +11,9 @@ export const GlobalContext = createContext<IGlobalContext>(initialValues)
 
 export const GlobalContextProvider: FC<GlobalContextProps> = ({ children }) => {
   const [selectedTerm, setSelectedTerm] = useState<
-    typeof initialValues['selectedTerm']
+    (typeof initialValues)['selectedTerm']
   >(initialValues.selectedTerm)
-  const [data, setData] = useState<typeof initialValues['data']>(
+  const [data, setData] = useState<(typeof initialValues)['data']>(
     initialValues.data,
   )
 
@@ -26,8 +25,7 @@ export const GlobalContextProvider: FC<GlobalContextProps> = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ selectedTerm, setSelectedTerm, data, setData }}
-    >
+      value={{ selectedTerm, setSelectedTerm, data, setData }}>
       {children}
     </GlobalContext.Provider>
   )

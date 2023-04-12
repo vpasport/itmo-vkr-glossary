@@ -16,8 +16,7 @@ export const Header: FC = () => {
         className={styles['header-button']}
         onClick={() =>
           history.replace(location.pathname === '/graph' ? '/' : '/graph')
-        }
-      >
+        }>
         {location.pathname === '/graph' ? 'Словарь' : 'Карта'}
       </div>
       <User />

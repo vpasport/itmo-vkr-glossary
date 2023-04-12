@@ -2,7 +2,11 @@ import type { FC, MouseEventHandler } from 'react'
 import type { Connection } from 'reactflow'
 import type { NodesProps } from './nodes.types'
 
-import { useCallback, useContext, useState } from 'react'
+import {
+  useCallback,
+  useContext,
+  // useState
+} from 'react'
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -27,7 +31,7 @@ export const Nodes: FC<NodesProps> = ({ data }) => {
   const [nodes, , onNodesChange] = useNodesState(data.nodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(data.edges)
 
-  const [instance, setInstance] = useState<any>()
+  // const [instance, setInstance] = useState<any>()
 
   const onConnect = useCallback(
     (params: Connection) => setEdges((eds) => addEdge(params, eds)),
@@ -39,12 +43,12 @@ export const Nodes: FC<NodesProps> = ({ data }) => {
     setSelectedTerm(null)
   }, [])
 
-  const onSave = useCallback(() => {
-    if (instance) {
-      const flow = instance.toObject()
-      console.debug(flow)
-    }
-  }, [instance])
+  // const onSave = useCallback(() => {
+  //   if (instance) {
+  //     const flow = instance.toObject()
+  //     console.debug(flow)
+  //   }
+  // }, [instance])
 
   return (
     <div className={styles.nodes}>
@@ -61,7 +65,7 @@ export const Nodes: FC<NodesProps> = ({ data }) => {
         maxZoom={1}
         minZoom={0.36}
         onClick={onClick}
-        onInit={setInstance}
+        // onInit={setInstance}
       >
         <Controls showInteractive={false} />
         {/* <button

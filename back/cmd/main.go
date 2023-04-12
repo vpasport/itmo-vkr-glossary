@@ -36,7 +36,7 @@ func (h *Handler) GetTerms(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	writer.Header().Add("Content-Type", "application/json")
-	writer.WriteHeader(http.StatusOK)
+	// writer.WriteHeader(http.StatusOK)
 	return
 }
 

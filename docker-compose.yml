@@ -15,6 +15,7 @@ services:
       dockerfile: Dockerfile
       args:
         - REACT_APP_BACKEND=/vpasport
+        - REACT_APP_BASE=/vpasport
     ports:
       - "3000:3000"
     user: root

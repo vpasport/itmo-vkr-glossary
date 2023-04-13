@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   extends: [
@@ -46,7 +46,7 @@ module.exports = {
         usePrettierrc: false,
       },
     ],
-    "react-hooks/exhaustive-deps": "off",
+    'react-hooks/exhaustive-deps': 'off',
     'max-len': [1, { code: 80 }],
     '@typescript-eslint/object-curly-spacing': ['error', 'always'],
     '@typescript-eslint/semi': 'off',
@@ -121,4 +121,4 @@ module.exports = {
     },
   ],
   ignorePatterns: ['**/reportWebVitals.ts', '**/*.d.ts'],
-};
+}

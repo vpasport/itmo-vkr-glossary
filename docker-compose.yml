@@ -7,22 +7,13 @@ networks:
 services:
   frontend:
     container_name: frontend
-    hostname: frontend
-    environment:
-      - REACT_APP_BACKEND=nginx
     build:
       context: ./front
       dockerfile: Dockerfile
       args:
         - REACT_APP_BACKEND=/vpasport
         - REACT_APP_BASE=/vpasport
-    ports:
-      - "3000:3000"
     user: root
-    restart: on-failure
-    deploy:
-      restart_policy:
-        condition: on-failure
     depends_on:
       - backend
     volumes:
@@ -36,7 +27,6 @@ services:
       redis:
         condition: service_healthy
     environment:
-      #REDIS
       - REDIS_PORT=6379
       - REDIS_TIMEOUT=200ms
     ports:

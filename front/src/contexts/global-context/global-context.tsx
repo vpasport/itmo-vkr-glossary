@@ -25,7 +25,8 @@ export const GlobalContextProvider: FC<GlobalContextProps> = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ selectedTerm, setSelectedTerm, data, setData }}>
+      value={{ selectedTerm, setSelectedTerm, data, setData }}
+    >
       {children}
     </GlobalContext.Provider>
   )

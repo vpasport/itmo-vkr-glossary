@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    name: Lint (Frond)
     steps:
     -
       name: Checkout
@@ -29,13 +30,41 @@ jobs:
     - 
       name: Run ESLint
       working-directory: ./front
-      run: yarn lint:check
-    
+      run: yarn lint:check 
+  backend-lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: [ 1.19 ]
+        os: [ macos-latest ]
+    name: Lint (Back)
+    steps:
+    - 
+      name: Checkout
+      uses: actions/checkout@v3
+    - 
+      name: Setup GO
+      uses: actions/setup-go@v4
+      with:
+        go-version: ${{ matrix.go }}
+        cache: false
+    - 
+      name: golangci-lint
+      uses: golangci/golangci-lint-action@v3
+      with:
+        version: latest
+        working-directory: back
+        args: --issues-exit-code=0
+        skip-cache: true
+        skip-pkg-cache: true
+        skip-build-cache: true
+
 
   frontend-build:
     needs: 
       - frontend-lint
     runs-on: ubuntu-latest
+    name: Build (Front)
     steps:
     -
       name: Checkout
@@ -52,8 +81,9 @@ jobs:
         push: false
   backend-build:
     needs: 
-      - frontend-lint
+      - backend-lint
     runs-on: ubuntu-latest
+    name: Build (Back)
     steps:
     -
       name: Checkout
@@ -74,9 +104,10 @@ jobs:
     needs: 
       - frontend-build
       - backend-build
-
+    name: Deploy
     steps:
-    - name: Deploy using ssh
+    - 
+      name: Deploy using ssh
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
